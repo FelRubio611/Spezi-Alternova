@@ -9,7 +9,7 @@
 import SwiftUI
 
 
-open class SpeziSceneDelegate: NSObject, UISceneDelegate {
+open class SpeziSceneDelegate: NSObject, UISceneDelegate, UIWindowSceneDelegate {
     public var window: UIWindow?
     public func sceneWillEnterForeground(_ scene: UIScene) {
         guard let delegate = SpeziAppDelegate.appDelegate else {
