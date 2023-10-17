@@ -9,29 +9,29 @@
 import SwiftUI
 
 
-class SpeziSceneDelegate: NSObject, UISceneDelegate {
-    func sceneWillEnterForeground(_ scene: UIScene) {
+open class SpeziSceneDelegate: NSObject, UISceneDelegate {
+    public func sceneWillEnterForeground(_ scene: UIScene) {
         guard let delegate = SpeziAppDelegate.appDelegate else {
             return
         }
         delegate.sceneWillEnterForeground(scene)
     }
     
-    func sceneDidBecomeActive(_ scene: UIScene) {
+    public func sceneDidBecomeActive(_ scene: UIScene) {
         guard let delegate = SpeziAppDelegate.appDelegate else {
             return
         }
         delegate.sceneDidBecomeActive(scene)
     }
     
-    func sceneWillResignActive(_ scene: UIScene) {
+    public func sceneWillResignActive(_ scene: UIScene) {
         guard let delegate = SpeziAppDelegate.appDelegate else {
             return
         }
         delegate.sceneWillResignActive(scene)
     }
     
-    func sceneDidEnterBackground(_ scene: UIScene) {
+    public func sceneDidEnterBackground(_ scene: UIScene) {
         guard let delegate = SpeziAppDelegate.appDelegate else {
             return
         }
