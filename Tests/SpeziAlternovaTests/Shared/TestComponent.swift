@@ -6,7 +6,7 @@
 // SPDX-License-Identifier: MIT
 //
 
-import Spezi
+import SpeziAlternova
 import SwiftUI
 @_exported import XCTest
 

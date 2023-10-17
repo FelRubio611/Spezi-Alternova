@@ -19,7 +19,7 @@ let package = Package(
     ],
     products: [
         .library(name: "SpeziAlternova", targets: ["SpeziAlternova"]),
-        .library(name: "XCTSpezi", targets: ["XCTSpezi"])
+        .library(name: "XCTSpeziAlternova", targets: ["XCTSpeziAlternova"])
     ],
     dependencies: [
         .package(url: "https://github.com/StanfordBDHG/XCTRuntimeAssertions", .upToNextMinor(from: "0.2.5"))
@@ -32,16 +32,16 @@ let package = Package(
             ]
         ),
         .target(
-            name: "XCTSpezi",
+            name: "XCTSpeziAlternova",
             dependencies: [
                 .target(name: "SpeziAlternova")
             ]
         ),
         .testTarget(
-            name: "SpeziTests",
+            name: "SpeziAlternovaTests",
             dependencies: [
                 .target(name: "SpeziAlternova"),
-                .target(name: "XCTSpezi"),
+                .target(name: "XCTSpeziAlternova"),
                 .product(name: "XCTRuntimeAssertions", package: "XCTRuntimeAssertions")
             ]
         )

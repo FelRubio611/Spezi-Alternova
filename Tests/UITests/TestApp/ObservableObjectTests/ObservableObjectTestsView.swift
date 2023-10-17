@@ -8,7 +8,7 @@
 
 import SwiftUI
 import XCTestApp
-import XCTSpezi
+import XCTSpeziAlternova
 
 
 struct ObservableObjectTestsView: View {

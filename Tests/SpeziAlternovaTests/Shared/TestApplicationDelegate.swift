@@ -7,7 +7,7 @@
 //
 
 #if DEBUG
-import Spezi
+import SpeziAlternova
 import SwiftUI
 @_exported import XCTest
 

@@ -6,9 +6,9 @@
 // SPDX-License-Identifier: MIT
 //
 
-import Spezi
+import SpeziAlternova
 import XCTestApp
-import XCTSpezi
+import XCTSpeziAlternova
 
 
 class ObservableObjectTests: TestAppTestCase {

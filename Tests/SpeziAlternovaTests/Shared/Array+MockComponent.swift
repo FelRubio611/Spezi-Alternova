@@ -6,7 +6,7 @@
 // SPDX-License-Identifier: MIT
 //
 
-import Spezi
+import SpeziAlternova
 
 
 extension Array where Element == any Component {

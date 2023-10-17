@@ -6,9 +6,9 @@
 // SPDX-License-Identifier: MIT
 //
 
-import Spezi
+import SpeziAlternova
 import SwiftUI
-import XCTSpezi
+import XCTSpeziAlternova
 
 
 class TestAppDelegate: SpeziAppDelegate {

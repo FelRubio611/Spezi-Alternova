@@ -7,7 +7,7 @@
 //
 
 
-@testable import Spezi
+@testable import SpeziAlternova
 import SwiftUI
 import XCTest
 import XCTRuntimeAssertions

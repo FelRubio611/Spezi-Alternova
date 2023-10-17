@@ -7,7 +7,7 @@
 //
 
 import os
-@testable import Spezi
+@testable import SpeziAlternova
 import XCTest
 
 struct TestAnchor: RepositoryAnchor {}

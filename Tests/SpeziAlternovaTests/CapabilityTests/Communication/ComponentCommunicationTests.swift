@@ -6,10 +6,10 @@
 // SPDX-License-Identifier: MIT
 //
 
-@testable import Spezi
+@testable import SpeziAlternova
 import XCTest
 import XCTRuntimeAssertions
-import XCTSpezi
+import XCTSpeziAlternova
 
 
 private final class ProvideComponent1: Component {

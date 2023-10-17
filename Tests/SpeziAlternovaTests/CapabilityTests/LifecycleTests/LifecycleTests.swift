@@ -6,7 +6,7 @@
 // SPDX-License-Identifier: MIT
 //
 
-@testable import Spezi
+@testable import SpeziAlternova
 import XCTest
 import XCTRuntimeAssertions
 

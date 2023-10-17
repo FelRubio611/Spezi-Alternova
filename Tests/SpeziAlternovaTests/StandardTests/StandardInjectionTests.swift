@@ -6,20 +6,15 @@
 // SPDX-License-Identifier: MIT
 //
 
-@testable import Spezi
+@testable import SpeziAlternova
 import SwiftUI
 import XCTest
 import XCTRuntimeAssertions
 
 
-private protocol ExampleConstraint: Standard {
-    func betterFulfill(expectation: XCTestExpectation)
-}
-
-
-final class StandardConstraintTests: XCTestCase {
-    final class StandardCTestComponent: Component {
-        @StandardActor private var standard: any ExampleConstraint
+final class StandardInjectionTests: XCTestCase {
+    final class StandardInjectionTestComponent: Component {
+        @StandardActor var standard: MockStandard
         
         let expectation: XCTestExpectation
         
@@ -31,18 +26,18 @@ final class StandardConstraintTests: XCTestCase {
         
         func configure() {
             Task {
-                await standard.betterFulfill(expectation: expectation)
+                await standard.fulfill(expectation: expectation)
             }
         }
     }
     
-    class StandardCTestApplicationDelegate: SpeziAppDelegate {
+    class StandardInjectionTestApplicationDelegate: SpeziAppDelegate {
         let expectation: XCTestExpectation
         
         
         override var configuration: Configuration {
             Configuration(standard: MockStandard()) {
-                StandardCTestComponent(expectation: expectation)
+                StandardInjectionTestComponent(expectation: expectation)
             }
         }
         
@@ -53,22 +48,21 @@ final class StandardConstraintTests: XCTestCase {
     }
     
     
-    func testStandardConstraint() async throws {
+    func testComponentFlow() async throws {
         let expectation = XCTestExpectation(description: "Component")
         expectation.assertForOverFulfill = true
         
-        let standardCTestApplicationDelegate = await StandardCTestApplicationDelegate(
+        let standardInjectionTestApplicationDelegate = await StandardInjectionTestApplicationDelegate(
             expectation: expectation
         )
-        _ = await standardCTestApplicationDelegate.spezi
+        _ = await standardInjectionTestApplicationDelegate.spezi
         
         await fulfillment(of: [expectation], timeout: 0.01)
     }
-}
-
-
-extension MockStandard: ExampleConstraint {
-    func betterFulfill(expectation: XCTestExpectation) {
-        fulfill(expectation: expectation)
+    
+    func testInjectionPrecondition() throws {
+        try XCTRuntimePrecondition {
+            _ = _StandardPropertyWrapper<MockStandard>().wrappedValue
+        }
     }
 }
