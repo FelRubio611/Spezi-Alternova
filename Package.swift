@@ -12,13 +12,13 @@ import PackageDescription
 
 
 let package = Package(
-    name: "Spezi",
+    name: "Spezi-Alternova",
     defaultLocalization: "en",
     platforms: [
         .iOS(.v16)
     ],
     products: [
-        .library(name: "Spezi", targets: ["Spezi"]),
+        .library(name: "Spezi-Alternova", targets: ["Spezi-Alternova"]),
         .library(name: "XCTSpezi", targets: ["XCTSpezi"])
     ],
     dependencies: [
@@ -26,7 +26,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "Spezi",
+            name: "Spezi-Alternova",
             dependencies: [
                 .product(name: "XCTRuntimeAssertions", package: "XCTRuntimeAssertions")
             ]
@@ -34,13 +34,13 @@ let package = Package(
         .target(
             name: "XCTSpezi",
             dependencies: [
-                .target(name: "Spezi")
+                .target(name: "Spezi-Alternova")
             ]
         ),
         .testTarget(
             name: "SpeziTests",
             dependencies: [
-                .target(name: "Spezi"),
+                .target(name: "Spezi-Alternova"),
                 .target(name: "XCTSpezi"),
                 .product(name: "XCTRuntimeAssertions", package: "XCTRuntimeAssertions")
             ]
